@@ -14,7 +14,7 @@ export const ListaProvider=({children}:{children:ReactNode})=>{
     const [lista,setLista]=useState<Album[]>([])
 
     const addLista=(item:Album)=>{
-        if (!lista.some(c => c.collectionName === item.collectionName)) {
+        if (!lista.some(c => c.collectionId === item.collectionId)) {
             setLista([...lista, item])
         }
     }

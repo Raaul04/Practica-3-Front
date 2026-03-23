@@ -14,12 +14,12 @@ const AddTolList = () => {
                
                    <div className="album-page-results-list">
                        {lista.map((item) => (
-                           <div key={item.collectionName} className="cocktail-page-result-item">
+                           <div key={item.collectionId} className="cocktail-page-result-item">
                                <h2 className="cocktail-page-result-name">{item.collectionName}</h2>
                                {item.artworkUrl60 && (
                                    <img
                                        src={item.artworkUrl60}
-                                       alt={`Imagen de ${item.collectionName}`}
+                                       alt={`Imagen de ${item.collectionId}`}
                                        className="cocktail-page-result-image"
                                    />
                                )}
