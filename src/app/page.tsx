@@ -25,7 +25,7 @@ const Home=()=>{
           </button>
 
           <button
-            className="cocktail-page-result-button"
+            className="button"
             onClick={() => {
                 router.push('/favoritos');
             }}>
