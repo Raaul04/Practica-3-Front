@@ -8,7 +8,7 @@ import { useLista } from "../context/MusicContext";
 
 const AlbumPage = () => {
     const router = useRouter()
-    const { addLista, deleteLista } = useLista();
+    const { addLista } = useLista();
     
     const[results,setResults]=useState<Album[]>([])
     const [error,setError]=useState<string|null>(null)

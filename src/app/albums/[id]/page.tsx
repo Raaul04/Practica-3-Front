@@ -8,15 +8,15 @@ import { useEffect, useState } from "react";
 
 
 
-const AlbumPageDetail=()=>{
+const AlbumPageDetail = () => {
 
-    const {id}=useParams()
+	const { id } = useParams()
 
-    const [loading, setLoading] = useState(false);
-	
+	const [loading, setLoading] = useState(false);
+
 	const [album, setAlbum] = useState<Album | null>(null)
 
-    	useEffect(() => {
+	useEffect(() => {
 		if (!id) return;
 
 		setLoading(true);
@@ -27,19 +27,19 @@ const AlbumPageDetail=()=>{
 			.finally(() => setLoading(false));
 	}, [id]);
 
-    return(
+	return (
 
 		<div className="cocktail-detalle">
 			<div className="cocktail-card">
 				<h1 className="cocktail-titulo">Detalle del Album</h1>
-				
-				
+
+
 				{loading && <p className="cocktail-loading">Buscando...</p>}
 
 				{album && <AlbumCard album={album} />}
 			</div>
 		</div>
-    )
+	)
 }
 
 export default AlbumPageDetail
