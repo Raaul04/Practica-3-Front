@@ -23,7 +23,6 @@ const Home=()=>{
   }
 
 
-
   return (
     <div className="container">
       <div className="card">
@@ -43,9 +42,13 @@ const Home=()=>{
           </button>
 
 
-          <button className="button">
+          <button
+            className="cocktail-page-result-button"
+            onClick={() => {
+                router.push('/favoritos');
+            }}>
             Favoritos
-          </button>
+        </button>
         </div>
       </div>
     </div>
