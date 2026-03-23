@@ -1,7 +1,7 @@
 'use client';
 
-import{createContext, ReactNode, useContext, useState} from 'react';
-import {Album } from '../types';
+import { createContext, ReactNode, useContext, useState } from 'react';
+import { Album } from '../types';
 
 type ListaContextType = {
     lista: Album[];
