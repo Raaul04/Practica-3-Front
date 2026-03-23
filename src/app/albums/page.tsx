@@ -6,17 +6,14 @@ import { getAlbumByNameArtist } from "../lib/albums";
 import { useLista } from "../context/MusicContext";
 
 
-const AlbumPage=()=>{
+const AlbumPage = () => {
     const router = useRouter()
     const { addLista } = useLista();
 
-
-      const router=useRouter();
-    
-    const[results,setResults]=useState<Album[]>([])
-    const [error,setError]=useState<string|null>(null)
-    const [loading,setLoading]=useState(false)
-    const[name,setName]=useState('')
+    const [results, setResults] = useState<Album[]>([])
+    const [error, setError] = useState<string | null>(null)
+    const [loading, setLoading] = useState(false)
+    const [name, setName] = useState('')
 
 
 
@@ -42,54 +39,53 @@ const AlbumPage=()=>{
         <div>
             <h1>Albums</h1>
 
-            
+
             <input
                 type="text"
                 placeholder="Buscar..."
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="input"
-           />
+            />
 
-           <button onClick={HandleBotton} disabled={loading}>
-            {loading ? 'Buscando...' : 'Buscar'}
-           </button>
+            <button onClick={HandleBotton} disabled={loading}>
+                {loading ? 'Buscando...' : 'Buscar'}
+            </button>
 
 
-            <button 
-                className="album-page-result-button" 
+            <button
+                className="album-page-result-button"
                 style={{ marginTop: '20px' }}
                 onClick={() => router.push('/')}>
                 Volver al inicio
             </button>
-           
+
             {results.map((album) => (
-                        <div key={album.collectionId || album.artistId} className="ablum-item">
-                            <h2 className="album-name">{album.collectionName}</h2>
-                            <img src={album.artworkUrl60} alt={album.collectionName}></img>
-                            <button
-                                className="album-button"
-                                onClick={() => router.push(`/album/${album.collectionId}`)}
-                            >
-                                Ver detalle
-                            </button>
+                <div key={album.collectionId || album.artistId} className="ablum-item">
+                    <h2 className="album-name">{album.collectionName}</h2>
+                    <img src={album.artworkUrl60} alt={album.collectionName}></img>
+                    <button
+                        className="album-button"
+                        onClick={() => router.push(`/albums/${album.collectionId}`)}
+                    >
+                        Ver detalle
+                    </button>
 
-                            <button
-                                className="album-page-result-button"
-                                onClick={() => {
-                                    addLista(album);
-                                    //router.push('/addToList');
-                                }}
-                            >
-                                añadir a lista
-                            </button>
+                    <button
+                        className="album-page-result-button"
+                        onClick={() => {
+                            addLista(album);
+                        }}
+                    >
+                        añadir a lista
+                    </button>
 
-                            
-                        </div>
-                    ))}
-           
-         
-            
+
+                </div>
+            ))}
+
+
+
         </div>
     )
 }
