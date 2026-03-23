@@ -7,6 +7,21 @@ const Home=()=>{
   const router=useRouter();
 
   const[search,setSearch]=useState('');
+  const[error,setError]=useState<string|null>(null)
+
+  const handleAlbums=()=>{
+      const buscador=search.trim()
+
+      if(!buscador){
+        setError('Escribe el nombre de un cocktail para buscar.');
+      return;
+      }
+
+      setError(null)
+
+      router.push(`/albums`)
+  }
+
 
   return (
     <div className="container">
@@ -24,6 +39,11 @@ const Home=()=>{
 
           <button className="button" >
             Buscar
+          </button>
+
+
+          <button className="button">
+            Favoritos
           </button>
         </div>
       </div>
