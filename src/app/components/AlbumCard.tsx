@@ -15,7 +15,7 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
     return (
         <div className="album">
 
-            <button onClick={() => router.push("/")}>← Volver</button>
+            <button onClick={() => router.push("/albums")}>← Volver</button>
             <h2 className="NombreCocktel">{album.collectionName}</h2>
             <h3 className="NombreArtista">{album.artistName}</h3>
             <div className="cocktailinfo">
