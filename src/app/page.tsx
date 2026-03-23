@@ -8,6 +8,7 @@ const Home=()=>{
 
   const[search,setSearch]=useState('');
 
+
   return (
     <div className="container">
       <div className="card">
@@ -25,6 +26,8 @@ const Home=()=>{
           <button className="button" >
             Buscar
           </button>
+
+
         </div>
       </div>
     </div>
