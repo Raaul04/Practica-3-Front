@@ -4,7 +4,7 @@ import { useLista } from "@/app/context/MusicContext"
 import { useRouter } from "next/navigation"
 
 const AddTolList = () => {
-    const { lista } = useLista()
+    const { lista, deleteLista } = useLista()
     const router = useRouter()
 
     return (
@@ -23,9 +23,23 @@ const AddTolList = () => {
                                        className="cocktail-page-result-image"
                                    />
                                )}
+                                <button
+                                    className="album-page-result-button"
+                                    onClick={() => {
+                                        deleteLista(item.collectionId);
+                                    }}
+                                >
+                                eliminar de lista
+                            </button>
                            </div>
+
+                           
+
+                           
                        ))}
                    </div>
+                         
+                            
                
                <button 
                   className="album-page-result-button" 

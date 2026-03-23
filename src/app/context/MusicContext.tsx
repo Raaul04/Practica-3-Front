@@ -5,7 +5,9 @@ import { Album } from '../types';
 
 type ListaContextType = {
     lista: Album[];
+
     addLista: (item: Album) => void;
+    deleteLista:(id: number) => void
 };
 
 const ListaContext = createContext<ListaContextType|null>(null)
@@ -18,8 +20,13 @@ export const ListaProvider=({children}:{children:ReactNode})=>{
             setLista([...lista, item])
         }
     }
+
+    const deleteLista = (id: number) => {
+        setLista(lista.filter(c => c.collectionId !== id));
+    };
+
     return(
-        <ListaContext.Provider value={{lista,addLista}}>
+        <ListaContext.Provider value={{lista, addLista, deleteLista}}>
             {children}
         </ListaContext.Provider>
     )

@@ -8,10 +8,7 @@ import { useLista } from "../context/MusicContext";
 
 const AlbumPage=()=>{
     const router = useRouter()
-    const { addLista } = useLista();
-
-
-      const router=useRouter();
+    const { addLista, deleteLista } = useLista();
     
     const[results,setResults]=useState<Album[]>([])
     const [error,setError]=useState<string|null>(null)
@@ -78,12 +75,12 @@ const AlbumPage=()=>{
                                 className="album-page-result-button"
                                 onClick={() => {
                                     addLista(album);
-                                    //router.push('/addToList');
                                 }}
                             >
                                 añadir a lista
                             </button>
 
+                          
                             
                         </div>
                     ))}
