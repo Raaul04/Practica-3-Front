@@ -23,10 +23,9 @@
   margin-bottom: 20px;
 }
 
-.album-page-result-button {
+.favorites-remove-button {
   max-width: 100%;
   border-radius: 4px;
-  display: block;
 }
 
 .titulo {
@@ -48,7 +47,7 @@
   justify-content: center;
 }
 
-.album-page-result-button {
+.favorites-remove-button {
   flex: 1;
   padding: 10px 20px;
   font-size: 16px;
@@ -62,7 +61,7 @@
   text-decoration: none;
 }
 
-.album-page-result-button:hover {
+.favorites-remove-button:hover {
   background-color: #0056b3;
 }
 

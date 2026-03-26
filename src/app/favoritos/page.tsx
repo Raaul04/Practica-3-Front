@@ -25,7 +25,7 @@ const AddTolList = () => {
                        )}
                         <div className="botones">
                             <button
-                                className="album-page-result-button"
+                                className="favorites-remove-button"
                                 onClick={() => {
                                     deleteLista(item.collectionId);
                                 }}
