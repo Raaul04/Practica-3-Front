@@ -5,7 +5,7 @@ import { getAlbumById } from "@/app/lib/albums";
 import { Album } from "@/app/types";
 import { useParams } from "next/navigation"
 import { useEffect, useState } from "react";
-import './page.css'
+import './pageDetalle.css'
 
 
 const AlbumPageDetail = () => {
