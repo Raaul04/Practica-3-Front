@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import './page.css'
+import './pageInicio.css'
 
 const Home=()=>{
   const router=useRouter();

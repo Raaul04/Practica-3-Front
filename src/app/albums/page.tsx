@@ -4,7 +4,7 @@ import { Album } from "../types"
 import { useRouter } from "next/navigation";
 import { getAlbumByNameArtist } from "../lib/albums";
 import { useLista } from "../context/MusicContext";
-import './page.css'
+import './pageAlbums.css'
 
 
 const AlbumPage = () => {

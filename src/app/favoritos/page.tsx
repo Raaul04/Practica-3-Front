@@ -2,6 +2,7 @@
 
 import { useLista } from "@/app/context/MusicContext"
 import { useRouter } from "next/navigation"
+import './pageFavortios.css'
 
 const AddTolList = () => {
     const { lista, deleteLista } = useLista()
@@ -9,41 +10,36 @@ const AddTolList = () => {
 
     return (
        <div className="albums-page-container">
-           <div className="album-page-card">
-               <h1 className="album-page-title">Albums Favoritos</h1>
-               
-                   <div className="album-page-results-list">
-                       {lista.map((item) => (
-                           <div key={item.collectionId} className="cocktail-page-result-item">
-                               <h2 className="cocktail-page-result-name">{item.collectionName}</h2>
-                               {item.artworkUrl60 && (
-                                   <img
-                                       src={item.artworkUrl60}
-                                       alt={`Imagen de ${item.collectionId}`}
-                                       className="cocktail-page-result-image"
-                                   />
-                               )}
-                                <button
-                                    className="album-page-result-button"
-                                    onClick={() => {
-                                        deleteLista(item.collectionId);
-                                    }}
-                                >
-                                eliminar de lista
+           <h1 className="titulo">Álbumes Favoritos</h1>
+           
+           <div className="album-page-results-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
+               {lista.map((item) => (
+                   <div key={item.collectionId} className="album-page-card">
+                       <h2 className="titulo">{item.collectionName}</h2>
+                       {item.artworkUrl60 && (
+                           <img
+                               src={item.artworkUrl60}
+                               alt={`Imagen de ${item.collectionName}`}
+                               style={{ borderRadius: '4px', maxWidth: '100%' }}
+                           />
+                       )}
+                        <div className="botones">
+                            <button
+                                className="album-page-result-button"
+                                onClick={() => {
+                                    deleteLista(item.collectionId);
+                                }}
+                            >
+                                Eliminar de lista
                             </button>
-                           </div>
-
-                           
-
-                           
-                       ))}
+                        </div>
                    </div>
-                         
-                            
-               
+               ))}
+           </div>
+                 
+           <div className="botones" style={{ marginTop: '20px' }}>
                <button 
-                  className="album-page-result-button" 
-                  style={{ marginTop: '20px' }}
+                  className="btn-volver" 
                   onClick={() => router.push('/')}>
                   Volver al inicio
                </button>
