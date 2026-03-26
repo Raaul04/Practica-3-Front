@@ -5,7 +5,7 @@ import { getAlbumById } from "@/app/lib/albums";
 import { Album } from "@/app/types";
 import { useParams } from "next/navigation"
 import { useEffect, useState } from "react";
-
+import './page.css'
 
 
 const AlbumPageDetail = () => {
@@ -29,17 +29,17 @@ const AlbumPageDetail = () => {
 
 	return (
 
-		<div className="cocktail-detalle">
-			<div className="cocktail-card">
-				<h1 className="cocktail-titulo">Detalle del Album</h1>
+		<div className="albums-page-id">
+			<div className="albums-card-id">
+				<h1 className="albums-titulo-id">Detalle del Album</h1>
 
 
-				{loading && <p className="cocktail-loading">Buscando...</p>}
+				{loading && <p className="albums-loading-id">Buscando...</p>}
 
 				{album && <AlbumCard album={album} />}
 			</div>
 		</div>
 	)
-}
+}	
 
 export default AlbumPageDetail

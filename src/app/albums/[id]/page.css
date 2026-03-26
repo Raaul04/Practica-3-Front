@@ -1,0 +1,29 @@
+
+.albums-page-id{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: darksalmon;
+
+}
+.albums-card-id {
+    background-color: burlywood;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.albums-titulo-id {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.albums-loading-id {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
